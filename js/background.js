@@ -5,6 +5,6 @@ chrome.commands.onCommand.addListener(command => {
 
 function executeScriptWithJQuery(file) {
   chrome.tabs.executeScript({ file: "lib/jquery-3.4.1.min.js" }, () => {
-    chrome.tabs.executeScript({ file: file });
+    chrome.tabs.executeScript({ file });
   });
 }
