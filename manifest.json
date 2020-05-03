@@ -1,6 +1,6 @@
 {
   "name": "Cross Navigations",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Feature-dedicated navigations across various pages",
   "permissions": ["activeTab"],
   "icons": {
@@ -10,16 +10,10 @@
     "128": "images/get_started128.png"
   },
   "manifest_version": 2,
-  "background": {
-    "persistent": false,
-    "scripts": ["js/background.js", "lib/jquery-3.4.1.min.js"]
-  },
-  "commands": {
-    "Focus capital input": {
-      "description": "Focus the capital input of the active page",
-      "suggested_key": {
-        "default": "Alt+F"
-      }
+  "content_scripts": [
+    {
+      "matches": ["https://www.thesaurus.com/*"],
+      "js": ["js/content.js", "lib/jquery-3.4.1.min.js"]
     }
-  }
+  ]
 }

@@ -1,7 +1,13 @@
-main();
+document.onkeydown = event => {
+  const {code, shiftKey} = event
+  if (code == "Slash" && !shiftKey) {
+    focusCapitalInput();
+    event.preventDefault()
+  }
+};
 
-function main() {
-  const capitalInput = findCapitalInput(location);
+function focusCapitalInput() {
+  capitalInput = findCapitalInput(location);
   if (capitalInput != null) {
     capitalInput.focus();
   }
