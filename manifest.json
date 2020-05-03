@@ -12,7 +12,10 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": ["https://www.thesaurus.com/*"],
+      "matches": [
+        "https://www.thesaurus.com/*",
+        "https://www.google.com/search?q=*"
+      ],
       "js": ["js/content.js", "lib/jquery-3.4.1.min.js"]
     }
   ]
