@@ -1,8 +1,8 @@
 document.onkeydown = event => {
-  const {code, shiftKey} = event
+  const { code, shiftKey } = event;
   if (code == "Slash" && !shiftKey) {
     focusCapitalInput();
-    event.preventDefault()
+    event.preventDefault();
   }
 };
 
@@ -14,10 +14,10 @@ function focusCapitalInput() {
 }
 
 function findCapitalInput({ hostname, pathname }) {
-  if (hostname == "www.thesaurus.com") 
-    return $("input[type='search']");
+  if (hostname == "www.thesaurus.com") return $("input[type='search']");
   if (hostname == "www.google.com" && pathname == "/search")
-    return $("input[name='q']")
+    return $("input[name='q']");
+  if (hostname == "www.wordhippo.com") return $("input#wordformword");
 
   return null;
 }

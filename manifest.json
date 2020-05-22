@@ -14,7 +14,8 @@
     {
       "matches": [
         "https://www.thesaurus.com/*",
-        "https://www.google.com/search?q=*"
+        "https://www.google.com/search?q=*",
+        "https://www.wordhippo.com/*"
       ],
       "js": ["js/content.js", "lib/jquery-3.4.1.min.js"]
     }
