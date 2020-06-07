@@ -45,7 +45,7 @@ function findWordHippoInput(pathname) {
       pathname.startsWith(`/what-is/${path}`) &&
       $(`#${divId}`).css("display") === "block"
     )
-      return $(`input#${inputId}`);
+      return withFocusHandler($(`input#${inputId}`));
   }
 
   const divIdsQueries = [
@@ -55,8 +55,16 @@ function findWordHippoInput(pathname) {
   ];
   for (let [divId, query] of divIdsQueries) {
     const div = $(`#${divId}[style*='display: block']`);
-    if (div.length > 0) return div.find(query);
+    if (div.length > 0) return withFocusHandler(div.find(query));
   }
 
   return null;
+}
+
+function withFocusHandler(input) {
+  return input.focus(() => {
+    const inputEl = input.get(0)
+    const textLength = inputEl.value.length
+    inputEl.setSelectionRange(textLength, textLength)
+  })
 }
