@@ -19,6 +19,7 @@
       ],
       "js": [
         "js/wordhippo/findWordHippoInput.js",
+        "js/wordhippo/navigateToWordHippoTab.js",
         "js/content.js",
         "lib/jquery-3.4.1.min.js"
       ]
