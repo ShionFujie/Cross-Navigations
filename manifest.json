@@ -17,7 +17,11 @@
         "https://www.google.com/search?q=*",
         "https://www.wordhippo.com/*"
       ],
-      "js": ["js/content.js", "lib/jquery-3.4.1.min.js"]
+      "js": [
+        "js/wordhippo/findWordHippoInput.js",
+        "js/content.js",
+        "lib/jquery-3.4.1.min.js"
+      ]
     }
   ]
 }
