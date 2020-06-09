@@ -5,7 +5,13 @@ document.onkeydown = event => {
     event.preventDefault();
     return;
   }
-  if (code.startsWith("Digit") && shiftKey && altKey && code[5] !== "0") {
+  if (
+    location.hostname == "www.wordhippo.com" &&
+    code.startsWith("Digit") &&
+    shiftKey &&
+    altKey &&
+    code[5] !== "0"
+  ) {
     navigateToWordHippoTab(parseInt(code[5]) - 1);
     return;
   }
