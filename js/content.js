@@ -12,6 +12,7 @@ document.onkeydown = event => {
     altKey &&
     code[5] !== "0"
   ) {
+    if (findCapitalInput(location).is(":focus")) return 
     navigateToWordHippoTab(parseInt(code[5]) - 1);
     return;
   }
