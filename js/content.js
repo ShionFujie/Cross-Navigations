@@ -1,5 +1,5 @@
 document.onkeydown = event => {
-  const { code, shiftKey, altKey } = event;
+  const { code, shiftKey } = event;
   if (code == "Slash" && !shiftKey) {
     focusCapitalInput();
     event.preventDefault();
@@ -8,8 +8,6 @@ document.onkeydown = event => {
   if (
     location.hostname == "www.wordhippo.com" &&
     code.startsWith("Digit") &&
-    shiftKey &&
-    altKey &&
     code[5] !== "0"
   ) {
     if (findCapitalInput(location).is(":focus")) return 
