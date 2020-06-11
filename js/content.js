@@ -1,5 +1,5 @@
 document.onkeydown = event => {
-  const { code, shiftKey } = event;
+  const { code, shiftKey, altKey, ctrlKey, metaKey } = event;
   if (code == "Slash" && !shiftKey) {
     focusCapitalInput();
     event.preventDefault();
@@ -8,9 +8,13 @@ document.onkeydown = event => {
   if (
     location.hostname == "www.wordhippo.com" &&
     code.startsWith("Digit") &&
-    code[5] !== "0"
+    code[5] !== "0" &&
+    !shiftKey &&
+    !altKey &&
+    !ctrlKey &&
+    !metaKey
   ) {
-    if (findCapitalInput(location).is(":focus")) return 
+    if (findCapitalInput(location).is(":focus")) return;
     navigateToWordHippoTab(parseInt(code[5]) - 1);
     return;
   }
