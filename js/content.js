@@ -1,3 +1,6 @@
+focusInputOnSelectChange('typeMenuDiv')
+focusInputOnSelectChange('matchMenuDiv')
+
 document.onkeydown = event => {
   const { code, shiftKey, altKey, ctrlKey, metaKey } = event;
   if (code == "Slash" && !shiftKey) {
@@ -34,4 +37,10 @@ function findCapitalInput({ hostname, pathname }) {
   if (hostname == "www.wordhippo.com") return findWordHippoInput(pathname);
 
   return null;
+}
+
+function focusInputOnSelectChange(divId) {
+  $(`div#${divId} select`).change(() => {
+      $(`div#${divId} input[type='text']`).focus()
+  })
 }
