@@ -21,8 +21,9 @@ function findWordHippoInput(pathname) {
     ["typeMenuDiv", "input[type='text']"]
   ];
   for (let [divId, query] of divIdsQueries) {
-    const div = $(`#${divId}[style*='display: block']`);
-    if (div.length > 0) return _withFocusHandler(div.find(query));
+    const div = $(`#${divId}`);
+    if (div.css("display") === "block")
+      return _withFocusHandler(div.find(query));
   }
 
   return null;
