@@ -22,7 +22,8 @@
         "js/wordhippo/findWordHippoInput.js",
         "js/wordhippo/navigateToWordHippoTab.js",
         "js/content.js"
-      ]
+      ],
+      "css": ["css/wordhippo.css"]
     }
   ]
 }

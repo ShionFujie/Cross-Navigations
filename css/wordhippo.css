@@ -1,0 +1,3 @@
+select#menuwordformtype:focus {
+    border-color: orange;
+}
