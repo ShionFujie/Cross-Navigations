@@ -1,6 +1,6 @@
 {
   "name": "Cross Navigations",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "Feature-dedicated navigations across various pages",
   "permissions": ["activeTab"],
   "icons": {
@@ -22,7 +22,8 @@
         "js/wordhippo/findWordHippoInput.js",
         "js/wordhippo/navigateToWordHippoTab.js",
         "js/content.js"
-      ]
+      ],
+      "css": ["css/wordhippo.css"]
     }
   ]
 }

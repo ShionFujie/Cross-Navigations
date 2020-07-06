@@ -18,7 +18,7 @@ function findWordHippoInput(pathname) {
   const divIdsQueries = [
     ["translateMenuDiv", "textarea"],
     ["matchMenuDiv", "input[type='text']"],
-    ["typeMenuDiv", "input[type='text']"]
+    ["typeMenuDiv", "select#menuwordformtype"]
   ];
   for (let [divId, query] of divIdsQueries) {
     const div = $(`#${divId}`);
