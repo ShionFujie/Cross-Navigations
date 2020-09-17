@@ -35,6 +35,7 @@ function findCapitalInput({ hostname, pathname }) {
   if (hostname == "www.google.com" && pathname == "/search")
     return $("input[name='q']");
   if (hostname == "www.wordhippo.com") return findWordHippoInput(pathname);
+  if (hostname == "en.wiktionary.org") return $("input[type='search'][name='search']")
 
   return null;
 }
