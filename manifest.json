@@ -1,6 +1,6 @@
 {
   "name": "Cross Navigations",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Feature-dedicated navigations across various pages",
   "permissions": ["activeTab"],
   "icons": {
@@ -15,7 +15,8 @@
       "matches": [
         "https://www.thesaurus.com/*",
         "https://www.google.com/search?q=*",
-        "https://www.wordhippo.com/*"
+        "https://www.wordhippo.com/*",
+        "https://en.wiktionary.org/wiki/*"
       ],
       "js": [
         "lib/jquery-3.4.1.min.js",
