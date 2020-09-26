@@ -31,8 +31,6 @@ function findWordHippoInput(pathname) {
 
 function _withFocusHandler(input) {
   return input.focus(() => {
-    const inputEl = input.get(0);
-    const textLength = inputEl.value.length;
-    inputEl.setSelectionRange(textLength, textLength);
+    input.get(0).select()
   });
 }
