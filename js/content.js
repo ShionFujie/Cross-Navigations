@@ -22,9 +22,16 @@ document.onkeydown = event => {
     navigateToWordHippoTab(parseInt(code[5]) - 1);
     return;
   }
-  if (ti !== undefined && location.hostname === "www.google.com" && location.pathname === "/search") {
-    console.debug(`Navigate to ${ti}th tab`)
-    navigateToGoogleSearchTab(ti)
+  console.debug('active element is...')
+  console.debug(document.activeElement)
+  if (
+    ti !== undefined &&
+    location.hostname === "www.google.com" &&
+    location.pathname === "/search" &&
+    document.activeElement !== document.querySelector("input[name='q']")
+  ) {
+    console.debug(`Navigate to ${ti}th tab`);
+    navigateToGoogleSearchTab(ti);
   }
 };
 
