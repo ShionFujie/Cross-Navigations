@@ -8,6 +8,7 @@ document.onkeydown = event => {
     event.preventDefault();
     return;
   }
+  const ti = getTabIndex(event)
   if (
     location.hostname == "www.wordhippo.com" &&
     code.startsWith("Digit") &&
@@ -21,7 +22,23 @@ document.onkeydown = event => {
     navigateToWordHippoTab(parseInt(code[5]) - 1);
     return;
   }
+  if (ti !== undefined && location.hostname === "www.google.com" && location.pathname === "/search") {
+    console.debug(`Navigate to ${ti}th tab`)
+    
+  }
 };
+
+function getTabIndex(event) {
+  const { code, shiftKey, altKey, ctrlKey, metaKey } = event;
+  if (code.startsWith("Digit") &&
+    code[5] !== "0" &&
+    !shiftKey &&
+    !altKey &&
+    !ctrlKey &&
+    !metaKey)
+    return parseInt(code[5]) - 1
+  return undefined
+}
 
 function focusCapitalInput() {
   capitalInput = findCapitalInput(location);
