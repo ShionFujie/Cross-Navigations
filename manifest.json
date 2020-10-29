@@ -1,6 +1,6 @@
 {
   "name": "Cross Navigations",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Feature-dedicated navigations across various pages",
   "permissions": ["activeTab"],
   "icons": {
