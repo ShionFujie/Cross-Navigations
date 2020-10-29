@@ -24,7 +24,7 @@ document.onkeydown = event => {
   }
   if (ti !== undefined && location.hostname === "www.google.com" && location.pathname === "/search") {
     console.debug(`Navigate to ${ti}th tab`)
-    
+    navigateToGoogleSearchTab(ti)
   }
 };
 
@@ -38,6 +38,21 @@ function getTabIndex(event) {
     !metaKey)
     return parseInt(code[5]) - 1
   return undefined
+}
+
+function navigateToGoogleSearchTab(ti) {
+  const items = document.querySelectorAll('#hdtb-msb-vis .hdtb-mitem.hdtb-imb')
+  if (ti >= items.length) {
+    console.debug(`there are ${items.length} tabs, but got index ${ti}`)
+    return
+  }
+  const anchor = items[ti].querySelector('.q.qs')
+  if (anchor === null) {
+    console.debug('this tab is perhaps selected?')
+    return
+  }
+  console.debug(`Navigate to URL '${anchor.href}'`)
+  location = anchor.href
 }
 
 function focusCapitalInput() {
