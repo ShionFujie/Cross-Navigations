@@ -41,6 +41,9 @@ function getTabIndex(event) {
 }
 
 function navigateToGoogleSearchTab(ti) {
+  // The following algorithm can do its job when the currently selected tab is one of 'All', 'News',
+  // 'Shopping', 'Videos', 'Books', 'Finance'. When 'Maps', 'Images', or 'Flights' is selected, the
+  // page then either doesn't have tab menu at all or inflates it in a different markup.
   const items = document.querySelectorAll('#hdtb-msb-vis .hdtb-mitem.hdtb-imb')
   if (ti >= items.length) {
     console.debug(`there are ${items.length} tabs, but got index ${ti}`)
